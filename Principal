@@ -1,0 +1,53 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package principala;
+
+import java.util.Scanner;
+/**
+*
+* @author USUARIO
+*/
+public class Principala {
+   static Mario Mario;
+ 
+    public static void saltar(){
+        System.out.println("Salta ");
+    }
+    public static void agachar(){
+        System.out.println("Se agacha");
+    }
+    public static void hongo(){
+        System.out.println("Te sientes poderoso");
+        }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+       Mario=new Mario("Mario", 3, 1);
+        char tecla = ' ';
+        System.out.println("BIENVENIDO A SUPERMARIOBROS");
+        do{
+            System.out.println("Seleccione una opcion ");
+            System.out.println("A para saltar");
+            System.out.println("D para agacharse");
+              System.out.println("x recoger hongo");
+            System.out.println("Z salir del juego");
+
+            tecla = scan.next().charAt(0);
+            tecla = Character.toLowerCase(tecla);
+            switch (tecla) {
+                case 'a' -> saltar();
+                case 'd' -> agachar();
+                case 'z' -> System.out.println("saliendo del juego");
+                case 'x' -> hongo();
+                default -> System.out.println("Tecla inválida");
+            }
+        }while(tecla != 'z');
+
+}
+ 
+   
+}
+ 
+ 
