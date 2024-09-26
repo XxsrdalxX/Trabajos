@@ -11,43 +11,98 @@ import java.util.Scanner;
 */
 public class Principala {
    static Mario Mario;
+   public static void bailar(){
+        System.out.println("Comienzas a Bailar un temazo ");
+    }
  
+    public static void correr(){
+        System.out.println("Comienzas a correr ");
+    }
     public static void saltar(){
-        System.out.println("Salta ");
+        System.out.println("Mario salta (Yujuuu) ");
     }
     public static void agachar(){
-        System.out.println("Se agacha");
+        System.out.println("Te agachas ");
     }
     public static void hongo(){
-        System.out.println("Te sientes poderoso");
+        System.out.println("Agarras un hongo y te sientes poderoso");
         }
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
        Mario=new Mario("Mario", 3, 1);
+      
         char tecla = ' ';
         System.out.println("BIENVENIDO A SUPERMARIOBROS");
+        System.out.println("Selecciona un personaje");
+         System.out.println("M para mario");
+          System.out.println("L para luigi");
+       tecla = scan.next().charAt(0);
+            tecla = Character.toLowerCase(tecla);
+            switch (tecla){
+                case 'l' : System.out.println("You just got Luigi'd"); 
+                Mario=new Mario("Luigi", 3, 2);
+                    break;
+                case 'm': System.out.println("ITS ME MARIOO");               
+                Mario.vidas++;                 
+                break;
+                 default: System.out.println("Escoje un Personaje valido");
+                 break;
+            }
+             System.out.println("Selecciona un nivel");
+             System.out.println("001 	Vanilla Secret 3");
+             System.out.println("002	Top Secret Area");
+             System.out.println("003	Donut Ghost House");
+             System.out.println("004	Donut Plains 3");
+            tecla = scan.next().charAt(0);
+            tecla = Character.toLowerCase(tecla);
+            switch (tecla){
+                case '1' : System.out.println("Vanilla Secret 3 Comienza a sonar una musica misteriosa y ves un goomba Cuidado!"); 
+                    break;
+                case '2': System.out.println("Entraste al Top secret Area ten cuidado con los shy guy ");
+                break;
+                 case '3': System.out.println("Cuidado con los boo son un poco agresivos cuando no los miras ");
+                 break;
+                 case '4': System.out.println("Cuidado con los wiggler son bastante agresivos");
+                 break;
+                 default: System.out.println("Escoje un nivel valido");
+                 break;
+            }
+            
         do{
             System.out.println("Seleccione una opcion ");
             System.out.println("A para saltar");
             System.out.println("D para agacharse");
               System.out.println("x recoger hongo");
+              System.out.println("k para bailar");
+              System.out.println("J para correr");
+            System.out.println("W Perder una vida");
+             System.out.println("C Ver estado  " );
             System.out.println("Z salir del juego");
 
             tecla = scan.next().charAt(0);
             tecla = Character.toLowerCase(tecla);
             switch (tecla) {
-                case 'a' -> saltar();
-                case 'd' -> agachar();
-                case 'z' -> System.out.println("saliendo del juego");
-                case 'x' -> hongo();
-                default -> System.out.println("Tecla inválida");
+                case 'w' : Mario.perdervidas();
+                break;
+                case 'a' :saltar();
+                break;
+                case 'd' : agachar();
+                break;
+                case 'z' : System.out.println("saliendo del juego");
+                break;
+                case 'x' : hongo();
+                break;
+                case 'j': correr();
+                break;
+                case 'k': bailar();
+                break;
+                case 'c': Mario.estado();
+                break;
+                default : System.out.println("Tecla inválida");
+                break;
+                
             }
         }while(tecla != 'z');
 
 }
- 
-   
-}
- 
- 
