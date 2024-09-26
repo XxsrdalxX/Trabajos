@@ -1,0 +1,51 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package principala;
+
+//**
+
+public class Mario {
+    private String Nombre;
+    private int vidas;
+    private int nivel;
+ 
+    public Mario (String Nombre, int vidas, int nivel) {
+        this.Nombre = Nombre;
+        this.vidas = vidas;
+        this.nivel = nivel;
+    }
+ 
+    public String getNombre() {
+        return Nombre;
+    }
+ 
+    public int getVidas() {
+        return vidas;
+    }
+ 
+    public int getNivel() {
+        return nivel;
+    }
+ 
+ 
+    public void setVidas(int vidas) {
+        this.vidas = vidas;
+    }
+ 
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+    public void recibirgolpe(int vidas){
+        vidas--;
+        if (vidas<=0){
+            System.out.println("Turururuturururu");
+        }
+
+ 
+}
+    public void nivel(){
+        System.out.println("El nivel actual de mario es " + nivel);
+    }
+}
